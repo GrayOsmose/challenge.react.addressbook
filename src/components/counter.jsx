@@ -1,14 +1,15 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
+import { Button } from 'react-bootstrap';
 import ReadMe from './readme';
 import { increase, decrease } from '../actions/counter_actions';
 
 const Counter = ({ dispatch, counter }) => (
   <div>
-    <button onClick={() => dispatch(decrease())}>-</button>
+    <Button onClick={() => dispatch(decrease())}>-</Button>
     <div>{counter}</div>
-    <button onClick={() => dispatch(increase())}>+</button>
+    <Button onClick={() => dispatch(increase())}>+</Button>
     <ReadMe />
   </div>
 );
