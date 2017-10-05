@@ -1,9 +1,9 @@
 import React from 'react';
 
+import ContactBook from './contact-book/contact-book';
+
 const App = () => (
-  <div>
-    App
-  </div>
+  <ContactBook />
 );
 
 export default App;
