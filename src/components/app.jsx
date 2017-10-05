@@ -3,7 +3,9 @@ import React from 'react';
 import ContactBook from './contact-book/contact-book';
 
 const App = () => (
-  <ContactBook />
+  <div className="container-fluid">
+    <ContactBook />
+  </div>
 );
 
 export default App;

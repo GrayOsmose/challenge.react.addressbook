@@ -1,7 +1,8 @@
 import {
   CONTACT_BOOK_ADD,
   CONTACT_BOOK_EDIT,
-  CONTACT_BOOK_DELETE
+  CONTACT_BOOK_DELETE,
+  CONTACT_BOOK_FILTER
 } from './constants';
 
 const initialState = {
