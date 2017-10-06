@@ -1,13 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { combineReducers, createStore } from 'redux';
 import { Provider } from 'react-redux';
 import { BrowserRouter, Route } from 'react-router-dom';
 
-import * as reducers from './reducers';
+import { createNewStore } from './reducers/store';
 import App from './components/app';
 
-const store = createStore(combineReducers(reducers));
+const store = createNewStore();
 
 ReactDOM.render((
   <Provider store={store}>

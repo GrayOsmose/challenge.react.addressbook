@@ -2,7 +2,7 @@ import {
   CONTACT_BOOK_ADD,
   CONTACT_BOOK_EDIT,
   CONTACT_BOOK_DELETE,
-  CONTACT_BOOK_FILTER
+  CONTACT_BOOK_SEARCH
 } from './constants';
 
 export const deleteContact = (id) => ({
@@ -20,7 +20,7 @@ export const editContact = (contact) => ({
   contact
 });
 
-export const filterContacts = (search) => ({
-  type: CONTACT_BOOK_FILTER,
+export const searchContacts = (search) => ({
+  type: CONTACT_BOOK_SEARCH,
   search
 });

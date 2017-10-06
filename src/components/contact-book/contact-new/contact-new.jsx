@@ -1,8 +1,11 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import ContactEditBlock from '../contact-edit-block/contact-edit-block';
 
-const ContactNew = () => (
+import { addContact } from '../contact-book-actions';
+
+const ContactNew = ({ dispatch }) => (
   <div>
 
     <div className="col-md-12">
@@ -10,10 +13,20 @@ const ContactNew = () => (
     </div>
 
     <div className="col-md-12">
-      <ContactEditBlock />
+      <ContactEditBlock
+        onSave={(contact) => dispatch(addContact(contact))}
+      />
     </div>
 
   </div>
 );
+
+ContactNew.propTypes = {
+  dispatch: PropTypes.func
+};
+
+ContactNew.defaultProps = {
+  dispatch: () => {}
+};
 
 export default ContactNew;
