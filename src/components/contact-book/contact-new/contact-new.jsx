@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 
 import ContactEditBlock from '../contact-edit-block/contact-edit-block';
-
 import { addContact } from '../contact-book-actions';
 
 const ContactNew = ({ dispatch }) => (
@@ -14,7 +14,7 @@ const ContactNew = ({ dispatch }) => (
 
     <div className="col-md-12">
       <ContactEditBlock
-        onSave={(contact) => dispatch(addContact(contact))}
+        onSave={(saveData) => dispatch(addContact(saveData))}
       />
     </div>
 
@@ -29,4 +29,4 @@ ContactNew.defaultProps = {
   dispatch: () => {}
 };
 
-export default ContactNew;
+export default connect(() => ({}))(ContactNew);

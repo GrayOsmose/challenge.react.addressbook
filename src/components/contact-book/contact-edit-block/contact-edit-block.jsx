@@ -3,7 +3,12 @@ import PropTypes from 'prop-types';
 import { Form, FormGroup, ControlLabel, FormControl, Button } from 'react-bootstrap';
 
 const ContactEditBlock = ({ id, name: { first, last }, onSave }) => {
-  let name = { first, last };
+  let firstInput, lastInput;
+
+  const getName = () => ({
+    first: firstInput.value,
+    last: lastInput.value
+  });
 
   return (
     <Form horizontal>
@@ -12,7 +17,7 @@ const ContactEditBlock = ({ id, name: { first, last }, onSave }) => {
         <ControlLabel>First Name</ControlLabel>
         <FormControl
           id="firstName"
-          inputRef={ref => name.first = ref}
+          inputRef={ref => firstInput = ref}
           defaultValue={first}
         />
       </FormGroup>
@@ -21,7 +26,7 @@ const ContactEditBlock = ({ id, name: { first, last }, onSave }) => {
         <ControlLabel>Last Name</ControlLabel>
         <FormControl
           id="lastName"
-          inputRef={ref => name.last = ref}
+          inputRef={ref => lastInput = ref}
           defaultValue={last}
         />
       </FormGroup>
@@ -30,7 +35,7 @@ const ContactEditBlock = ({ id, name: { first, last }, onSave }) => {
         type="submit"
         onClick={(event) => {
           event.preventDefault();
-          onSave({ id, name });
+          onSave({ id, name: getName() });
         }}
       >
         Save

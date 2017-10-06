@@ -9,16 +9,17 @@ import { searchContacts, deleteContact } from '../contact-book-actions';
 const ContactList = ({ dispatch, list, filter }) => {
   // simple filtration for now, better to move to testable function later on
   const filteredList = list.filter(({ name: { first, last } }) =>
-    first.contains(filter) ||
-    last.contains(last));
+    first.includes(filter) ||
+    last.includes(last));
 
   return (
     <div>
       <SearchBlock onSearch={(search) => dispatch(searchContacts(search))} />
 
       {
-        filteredList.map((contact) => (
+        filteredList.map((contact, index) => (
           <ContactBlock
+            key={index}
             contact={contact}
             onSelect={() => {}}
             onDelete={() => dispatch(deleteContact(contact.id))}

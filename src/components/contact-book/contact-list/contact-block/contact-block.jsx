@@ -1,13 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import { Button } from 'react-bootstrap';
+
 const ContactBlock = ({ contact: { id, name: { first, last } }, onDelete }) => (
   <div>
+
     <span>{first} {last}</span>
-    <span
-      className="glyphicon glyphicon-trash"
-      onClick={onDelete}
-    />
+    <Button onClick={onDelete}>
+      <span className="glyphicon glyphicon-trash" />
+    </Button>
+
   </div>
 );
 
