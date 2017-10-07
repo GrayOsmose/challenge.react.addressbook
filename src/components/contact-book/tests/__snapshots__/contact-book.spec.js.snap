@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ContactBook can render 1`] = `
+<div
+  className="col-sm-12"
+>
+  <div
+    className="row"
+  >
+    <h1>
+      Address-Book
+    </h1>
+    <Link
+      replace={false}
+      to="/new"
+    >
+      <Button
+        active={false}
+        block={false}
+        bsClass="btn"
+        bsStyle="default"
+        disabled={false}
+      >
+        <span
+          className="glyphicon glyphicon-plus"
+        />
+      </Button>
+    </Link>
+  </div>
+  <div
+    className="row"
+  >
+    <div
+      className="col-md-4"
+    >
+      <Connect(ContactList) />
+    </div>
+    <div
+      className="col-md-8"
+    >
+      <Route
+        component={[Function]}
+        exact={true}
+        path="/"
+      />
+      <Route
+        component={[Function]}
+        path="/new"
+      />
+      <Route
+        component={[Function]}
+        path="/view/:contactId"
+      />
+      <Route
+        component={[Function]}
+        path="/edit/:contactId"
+      />
+    </div>
+  </div>
+</div>
+`;

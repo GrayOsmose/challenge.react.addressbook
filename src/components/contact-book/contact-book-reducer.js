@@ -11,12 +11,18 @@ const initialState = {
 };
 
 export default function(state = initialState, action) {
-  console.log(action);
   switch (action.type) {
     case CONTACT_BOOK_ADD:
+      // just for tests
+      if (!action.contact.id) {
+        action.contact.id = Math.floor(Math.random() * 1000000000);
+      }
       return {
         ...state,
-        list: [ ...state.list, action.contact ]
+        list: [
+          ...state.list,
+          action.contact
+        ]
       };
 
     case CONTACT_BOOK_EDIT:

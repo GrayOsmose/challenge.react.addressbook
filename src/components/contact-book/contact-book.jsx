@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
 import { Route, Link } from 'react-router-dom';
 
 import { Button } from 'react-bootstrap';
@@ -11,7 +10,7 @@ import ContactView from './contact-view/contact-view';
 import ContactNew from './contact-new/contact-new';
 import ContactOld from './contact-old/contact-old';
 
-const ContactBook = ({ current, children }) => (
+const ContactBook = ({ children }) => (
   <div className="col-sm-12">
 
     <div className="row">
@@ -59,6 +58,4 @@ ContactBook.defaultProps = {
   children: null
 };
 
-export default connect(({ contactBook: { current } }) => ({
-  current
-}))(ContactBook);
+export default ContactBook;

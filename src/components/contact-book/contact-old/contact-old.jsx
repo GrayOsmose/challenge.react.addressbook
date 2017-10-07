@@ -5,8 +5,8 @@ import { connect } from 'react-redux';
 import ContactEditBlock from '../contact-edit-block/contact-edit-block';
 import { editContact } from '../contact-book-actions';
 
-// todo: move similar functinality to same block
 const ContactOld = ({ dispatch, list, match: { params: { contactId } } }) => {
+  // todo: move similar functinality to same block
   const contactIdNumber = Number(contactId);
   const contact = list.find(({ id }) => id === contactIdNumber );
 
@@ -52,4 +52,6 @@ ContactOld.defaultProps = {
   match: { params: { contactId: 0 } }
 };
 
-export default connect(() => ({}))(ContactOld);
+export default connect(({ contactBook: { list } }) => ({
+  list
+}))(ContactOld);

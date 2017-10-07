@@ -2,7 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Form, FormGroup, ControlLabel, FormControl, Button } from 'react-bootstrap';
 
-const ContactEditBlock = ({ id, name: { first, last }, onSave }) => {
+const ContactEditBlock = ({
+  contact: {
+    id,
+    name: { first, last } },
+    onSave
+  }) => {
   let firstInput, lastInput;
 
   const getName = () => ({
@@ -46,19 +51,24 @@ const ContactEditBlock = ({ id, name: { first, last }, onSave }) => {
 };
 
 ContactEditBlock.propTypes = {
-  id: PropTypes.number,
-  name: PropTypes.shape({
-    first: PropTypes.string,
-    last: PropTypes.string
+  contact: PropTypes.shape({
+    id: PropTypes.number,
+    name: PropTypes.shape({
+      first: PropTypes.string,
+      last: PropTypes.string
+    })
   }),
   onSave: PropTypes.func.isRequired
 };
 
 ContactEditBlock.defaultProps = {
-  id: 0,
-  name: {
-    first: '',
-    last: ''
+  // just for tests
+  contact: {
+    id: 0,
+    name: {
+      first: '',
+      last: ''
+    }
   },
   onSave: () => {}
 };
