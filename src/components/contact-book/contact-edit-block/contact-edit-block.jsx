@@ -3,11 +3,12 @@ import PropTypes from 'prop-types';
 import { Form, FormGroup, ControlLabel, FormControl, Button } from 'react-bootstrap';
 
 const ContactEditBlock = ({
-  contact: {
-    id,
-    name: { first, last } }
-  },
-  onSave) => {
+    contact: {
+      id,
+      name: { first, last }
+    },
+    onSave
+  }) => {
   let firstInput, lastInput;
 
   const getName = () => ({
