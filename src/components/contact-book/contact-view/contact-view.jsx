@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
+// todo: move similar functinality to same block
 const ContactView = ({ list, match: { params: { contactId } } }) => {
   const contactIdNumber = Number(contactId);
   const contact = list.find(({ id }) => id === contactIdNumber );
@@ -43,7 +44,8 @@ ContactView.propTypes = {
 
 ContactView.defaultProps = {
   list: [],
-  params: {}
+  params: {},
+  match: { params: { contactId: 0 } }
 };
 
 export default connect(({ contactBook: { list } }) => ({

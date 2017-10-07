@@ -8,11 +8,11 @@ import ContactBlock from './contact-block/contact-block';
 
 import { searchContacts } from '../contact-book-actions';
 
-const ContactList = ({ dispatch, list, filter }) => {
+const ContactList = ({ dispatch, list, search }) => {
   // simple filtration for now, better to move to testable function later on
   const filteredList = list.filter(({ name: { first, last } }) =>
-    first.includes(filter) ||
-    last.includes(last));
+    first.includes(search) ||
+    last.includes(search));
 
   return (
     <div>
