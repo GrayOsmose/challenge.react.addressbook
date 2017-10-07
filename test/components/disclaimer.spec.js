@@ -2,11 +2,11 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import SearchBlock from '../search-block';
+import Disclaimer from '../../src/components/disclaimer';
 
-describe('SearchBlock', function() {
+describe('Disclaimer', function() {
   it('can render', function() {
-    const component = shallow(<SearchBlock onSearch={() => {}} />);
+    const component = shallow(<Disclaimer />);
     expect(component).toMatchSnapshot();
   });
 });

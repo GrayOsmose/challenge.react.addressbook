@@ -2,7 +2,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import ContactBlock from '../contact-block';
+import ContactBlock from '../../src/components/contact-block';
 
 describe('ContactBlock', function() {
   it('can render', function() {

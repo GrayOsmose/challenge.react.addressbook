@@ -4,11 +4,11 @@ import { Route, Link } from 'react-router-dom';
 
 import { Button } from 'react-bootstrap';
 
-import ContactList from './contact-list/contact-list';
-import Disclaimer from './disclaimer/disclaimer';
-import ContactView from './contact-view/contact-view';
-import ContactNew from './contact-new/contact-new';
-import ContactOld from './contact-old/contact-old';
+import ContactList from './contact-list';
+import Disclaimer from './disclaimer';
+import ContactView from './contact-view';
+import ContactNew from './contact-new';
+import ContactOld from './contact-old';
 
 const ContactBook = ({ children }) => (
   <div className="col-sm-12">

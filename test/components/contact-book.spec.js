@@ -2,7 +2,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import ContactBook from '../contact-book';
+import ContactBook from '../../src/components/contact-book';
 
 describe('ContactBook', function() {
   it('can render', function() {

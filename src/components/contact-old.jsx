@@ -1,49 +1,36 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
-import { Button } from 'react-bootstrap';
 
-import { deleteContact } from '../contact-book-actions';
+import ContactEditBlock from './contact-edit-block';
+import { editContact } from '../actions/contact-book-actions';
 
-const ContactView = ({ dispatch, list, match: { params: { contactId } } }) => {
+const ContactOld = ({ dispatch, list, match: { params: { contactId } } }) => {
   // todo: move similar functinality to same block
   const contactIdNumber = Number(contactId);
   const contact = list.find(({ id }) => id === contactIdNumber );
 
   if (!contact) return (<div><span>Not Found</span></div>);
 
-  const { id, name: { first, last } } = contact;
-
   return (
     <div>
 
       <div className="col-md-12">
-
-        <h2>View Contact</h2>
-
-        <Link to={`/edit/${id}`}>
-          <Button>
-            <span className="glyphicon glyphicon-pencil" />
-          </Button>
-        </Link>
-
-        <Button onClick={() => dispatch(deleteContact(id))}>
-          <span className="glyphicon glyphicon-trash" />
-        </Button>
+        <h2>Old contact</h2>
       </div>
 
       <div className="col-md-12">
-
-        <span>{first} {last}</span>
-
+        <ContactEditBlock
+          contact={contact}
+          onSave={(saveData) => dispatch(editContact(saveData))}
+        />
       </div>
 
     </div>
   );
 };
 
-ContactView.propTypes = {
+ContactOld.propTypes = {
   dispatch: PropTypes.func,
   list: PropTypes.arrayOf(PropTypes.shape({
     id: PropTypes.number,
@@ -59,13 +46,12 @@ ContactView.propTypes = {
   }).isRequired
 };
 
-ContactView.defaultProps = {
+ContactOld.defaultProps = {
   dispatch: () => {},
   list: [],
-  params: {},
   match: { params: { contactId: 0 } }
 };
 
 export default connect(({ contactBook: { list } }) => ({
   list
-}))(ContactView);
+}))(ContactOld);

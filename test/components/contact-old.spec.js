@@ -3,7 +3,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import configureStore from 'redux-mock-store';
 
-import ContactOld from '../contact-old';
+import ContactOld from '../../src/components/contact-old';
 
 describe('ContactOld', function() {
   const mockStore = configureStore();

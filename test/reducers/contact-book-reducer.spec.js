@@ -1,5 +1,5 @@
-import reducer from '../contact-book-reducer';
-import { deleteContact, addContact, editContact, searchContacts } from '../contact-book-actions';
+import reducer from '../../src/reducers/contact-book-reducer';
+import { deleteContact, addContact, editContact, searchContacts } from '../../src/actions/contact-book-actions';
 
 describe('Contact book reducer', function() {
   it('can add', function() {

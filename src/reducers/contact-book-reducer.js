@@ -3,7 +3,7 @@ import {
   CONTACT_BOOK_EDIT,
   CONTACT_BOOK_DELETE,
   CONTACT_BOOK_SEARCH
-} from './constants';
+} from '../constants/action-types';
 
 const initialState = {
   list: [],

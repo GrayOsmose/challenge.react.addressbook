@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-import SearchBlock from './search-block/search-block';
-import ContactBlock from './contact-block/contact-block';
+import SearchBlock from './search-block';
+import ContactBlock from './contact-block';
 
-import { searchContacts } from '../contact-book-actions';
+import { searchContacts } from '../actions/contact-book-actions';
 
 const ContactList = ({ dispatch, list, search }) => {
   // simple filtration for now, better to move to testable function later on
