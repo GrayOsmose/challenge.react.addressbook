@@ -35,7 +35,7 @@ npm run lint
 
 ## Unit tests
 
-[Mocha](http://mochajs.org) is used for unit testing.
+[Jest](https://facebook.github.io/jest/) is used for unit testing with coverage.
 You can find detailed documentation on testing React/Redux apps [here](http://redux.js.org/docs/recipes/WritingTests.html).
 
 From the command line you can run all tests with
