@@ -2,11 +2,11 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import ContactBook from '../contact-book';
+import Disclaimer from '../disclaimer';
 
-describe('ContactBook', function() {
+describe('Disclaimer', function() {
   it('can render', function() {
-    const component = shallow(<ContactBook />);
+    const component = shallow(<Disclaimer />);
     expect(component).toMatchSnapshot();
   });
 });

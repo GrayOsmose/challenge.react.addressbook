@@ -16,7 +16,6 @@ const ContactView = ({ dispatch, list, match: { params: { contactId } } }) => {
   const { id, name: { first, last } } = contact;
 
   return (
-
     <div>
 
       <div className="col-md-12">

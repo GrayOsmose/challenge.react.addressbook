@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const ContactBlock = ({ contact: { id, name: { first, last } } }) => (
+const ContactBlock = ({ contact: { name: { first, last } } }) => (
   <div>
 
     <span>{first} {last}</span>

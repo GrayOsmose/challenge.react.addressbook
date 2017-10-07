@@ -5,9 +5,9 @@ import { Form, FormGroup, ControlLabel, FormControl, Button } from 'react-bootst
 const ContactEditBlock = ({
   contact: {
     id,
-    name: { first, last } },
-    onSave
-  }) => {
+    name: { first, last } }
+  },
+  onSave) => {
   let firstInput, lastInput;
 
   const getName = () => ({
