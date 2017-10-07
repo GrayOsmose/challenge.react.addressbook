@@ -51,7 +51,7 @@ ContactEditBlock.propTypes = {
     first: PropTypes.string,
     last: PropTypes.string
   }),
-  onSave: PropTypes.func
+  onSave: PropTypes.func.isRequired
 };
 
 ContactEditBlock.defaultProps = {

@@ -22,7 +22,7 @@ const ContactNew = ({ dispatch }) => (
 );
 
 ContactNew.propTypes = {
-  dispatch: PropTypes.func
+  dispatch: PropTypes.func.isRequired
 };
 
 ContactNew.defaultProps = {

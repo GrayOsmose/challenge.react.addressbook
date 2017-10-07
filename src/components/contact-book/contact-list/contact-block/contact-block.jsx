@@ -1,15 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { Button } from 'react-bootstrap';
-
-const ContactBlock = ({ contact: { id, name: { first, last } }, onDelete }) => (
+const ContactBlock = ({ contact: { id, name: { first, last } } }) => (
   <div>
 
     <span>{first} {last}</span>
-    <Button onClick={onDelete}>
-      <span className="glyphicon glyphicon-trash" />
-    </Button>
 
   </div>
 );
@@ -21,13 +16,11 @@ ContactBlock.propTypes = {
       first: PropTypes.string,
       last: PropTypes.string
     })
-  }),
-  onDelete: PropTypes.func
+  })
 };
 
 ContactBlock.defaultProps = {
-  contact: { name: {} },
-  onDelete: () => {}
+  contact: { name: {} }
 };
 
 export default ContactBlock;

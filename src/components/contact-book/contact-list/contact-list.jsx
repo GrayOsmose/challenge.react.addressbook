@@ -1,10 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
+
 import SearchBlock from './search-block/search-block';
 import ContactBlock from './contact-block/contact-block';
 
-import { searchContacts, deleteContact } from '../contact-book-actions';
+import { searchContacts } from '../contact-book-actions';
 
 const ContactList = ({ dispatch, list, filter }) => {
   // simple filtration for now, better to move to testable function later on
@@ -18,12 +20,11 @@ const ContactList = ({ dispatch, list, filter }) => {
 
       {
         filteredList.map((contact, index) => (
-          <ContactBlock
-            key={index}
-            contact={contact}
-            onSelect={() => {}}
-            onDelete={() => dispatch(deleteContact(contact.id))}
-          />
+          <Link key={index} to={`/view/${contact.id}`}>
+            <ContactBlock
+              contact={contact}
+            />
+          </Link>
         ))
       }
 
@@ -32,14 +33,14 @@ const ContactList = ({ dispatch, list, filter }) => {
 };
 
 ContactList.propTypes = {
-  dispatch: PropTypes.func,
+  dispatch: PropTypes.func.isRequired,
   list: PropTypes.arrayOf(PropTypes.shape({
     id: PropTypes.number,
     name: PropTypes.shape({
       first: PropTypes.string,
       last: PropTypes.string
     })
-  })),
+  })).isRequired,
   search: PropTypes.string
 };
 

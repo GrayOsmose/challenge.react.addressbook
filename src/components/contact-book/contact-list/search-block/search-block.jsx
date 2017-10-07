@@ -1,9 +1,19 @@
 import React from 'react';
 
-const SearchBlock = () => (
-  <div>
-    SearchBlock
-  </div>
-);
+import { FormControl } from 'react-bootstrap';
+
+const SearchBlock = ({ onSearch }) => {
+  let searchInput;
+
+  return (
+    <div>
+      <FormControl
+        inputRef={ref => searchInput = ref}
+        placeholder="Search"
+        onChange={() => onSearch(searchInput.value)}
+      />
+    </div>
+  );
+};
 
 export default SearchBlock;
