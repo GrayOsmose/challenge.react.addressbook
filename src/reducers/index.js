@@ -1,1 +1,1 @@
-export { default as contactBook } from 'contact-book-reducer';
+export { default as contactBook } from './contact-book-reducer';
