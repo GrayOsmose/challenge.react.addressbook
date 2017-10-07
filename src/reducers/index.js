@@ -1,1 +1,1 @@
-export { default as counter } from './counter_reducer';
+export { default as contactBook } from '../components/contact-book/contact-book-reducer';
